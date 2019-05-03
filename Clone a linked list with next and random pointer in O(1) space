@@ -1,0 +1,42 @@
+public LinkedList clone() 
+{
+	Node temp=head;
+	
+	while(temp!=null){
+		Node n =new Node(temp.data);
+		n.next=temp.next;
+		temp.next=n;
+		temp=temp.next.next;
+	}
+	
+	temp=head;
+	while(temp!=null){
+	    System.out.print("temp.next"+temp.next+" "+"temp.random"+temp.random+"\n");
+		if(temp.random==null){
+		    temp.next.random=null;
+		}
+		else{
+		temp.next.random=temp.random.next;
+		}
+		temp=temp.next.next;
+	}
+	
+	Node copy=head.next;
+	temp=copy;
+	Node original=head;
+	
+	while (original != null && temp != null)  
+    {  
+        original.next = original.next.next;  
+        System.out.println("temp.next="+temp.next+" temp.data="+temp.data+"\n");
+        if(temp.next==null){
+            temp.next=temp.next;
+        }else{
+            temp.next =temp.next.next;
+        }
+        original = original.next;  
+        temp = temp.next;  
+    }
+	return new LinkedList(copy);
+}
+}
