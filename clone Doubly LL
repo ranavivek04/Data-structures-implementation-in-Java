@@ -1,0 +1,25 @@
+void cloneDLL() { 
+		Node temp=head;
+        Node prv=null;
+
+while(temp!=null){
+    
+if(prv==null)
+{   
+	prv=new Node(temp.data);
+	prv.prev=null;
+	prv.next=null;
+	head1=prv;
+}
+else
+{
+    prv.next=new Node(temp.data);
+	prv.next.prev=prv;
+	prv=prv.next;
+	
+}
+temp=temp.next;
+}
+
+prv.next=null; 
+} 
