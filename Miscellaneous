@@ -1,0 +1,1340 @@
+static void pushZerosToEnd(int arr[], int n){
+
+int i=0;
+         
+for(int j=0;j<n;j++){
+   if(arr[j]!=0)&& arr[i]==0){
+      arr[i++]=arr[j];
+	  arr[j]=0;
+   }
+}
+for(int j=i;j<n;j++){
+   arr[j]=0;
+}
+		 
+}
+
+
+static void modifyAndRearrangeArr(int arr[], int n){
+    for(int i=0;i<n-2;i++){
+	    if(arr[i]==arr[i+1] && arr[i]!=0){
+		    arr[i]=2*arr[i];
+            arr[i+1]=0;			
+		} 
+	}
+    pushZerosToEnd(arr, n);	
+}
+
+
+{0, 2, 2, 2, 0, 6, 6, 0, 0, 8}
+
+0,4,0,2,0,12,0,0,0,8
+
+4,2,0,0,0,12,0,0,0,8
+
+i=2;
+j=1;
+
+cheers!
+
+Input:  [12 11 -13 -5 6 -7 5 -3 -6]
+Output: [-13 -5 -7 -3 -6 12 11 6 5]
+
+
+-13 12 11 -5 6 -7 5 -3 -6
+
+-13 -5 12 11 6 -7 5 -3 -6
+
+-13 -5 12 11 6 -7 5 -3 -6
+
+i=2        3  5
+j=2        3  5
+k=0;       1    
+temp=-13  -5 -7
+
+
+int k=-1;
+
+for(int i=0;i<n;i++){
+   if(arr[i]<0){
+     int temp=arr[i];
+	 int j=i;
+	 while(j>0 && arr[j-1]>0){
+	    arr[j]=arr[j-1];
+		j--;
+	 }
+	 arr[++k]=temp;
+	 
+   } 
+}
+
+
+cheers!!
+
+Collections.sort(arr, new Comparator<String>(){ 
+  
+        // A comparison function which is used by  
+        // sort() in printLargest() 
+        @Override
+        public int compare(String X, String Y) { 
+          
+        // first append Y at the end of X 
+        String XY=X + Y; 
+          
+        // then append X at the end of Y 
+        String YX=Y + X; 
+          
+        // Now see which of the two formed numbers  
+        // is greater 
+        return XY.compareTo(YX) > 0 ? -1:1; 
+    } 
+    });
+
+static void printLargest(Vector<String> arr){
+
+collections.sort(arr, new Comparator<String>(){
+      public int compare(String x, String y){
+	        String xy = x + y;
+            String yx = y + x;
+
+		return xy.compareTo(yx);	
+	  }
+
+}); 
+}
+
+                 0  1  2  3
+Input: arr[]  = {1, 3, 0, 2};
+
+Output: arr[] = {2, 0, 3, 1};
+
+Explanation for the above output.
+Since arr[0] is 1, arr[1] is changed to 0.
+Since arr[1] is 3, arr[3] is changed to 1.
+Since arr[2] is 0, arr[0] is changed to 2.
+Since arr[3] is 2, arr[2] is changed to 3.
+
+temp[arr[i]]=i;
+
+temp[1]=0;
+temp[3]=1;
+
+
+
+
+Input  : arr[] = {1, 2, 3, 4, 5, 6, 7} 
+int[] temp =new int[];
+int k = 0
+int j = n-1
+
+for(int i=0;i<n;i++){
+if(i<j){
+if(i%2 == 0)
+temp[i] = arr[j--];
+else
+temp[i] = arr[k++]; 
+}
+}
+
+
+7 1 6 2 5 3 4
+while(k<j){
+ 
+
+}
+
+
+
+
+Output : arr[] = {7, 1, 6, 2, 5, 3, 4} a[i]=i+1;
+
+       0  1  2  3  4  5 
+A[] = {1, 2, 5, 3, 4, 6} N elements      
+B[] = {0, 1, 1, 1, 0}    N-1 elements    
+
+ 
+A[] = {2, 3, 1, 4, 5, 6}                 
+B[] = {0, 1, 1, 1, 1} 
+
+
+for(int i=0;i<B.length;i++){
+   if(B[i]==1){
+			if(A[i]!=A[i+1]){
+				int t=A[i];
+				A[i]=A[i+1];
+				A[i+1]=t;
+			}
+   }
+} 
+
+Input :  arr[] = [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] 
+Output : arr[] = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1] 
+
+int i=-1;j=arr.length;
+while(true){
+		while(arr[++i]==0) if(i==n-1) break;
+		while(arr[--j])!=0) if(j==0) break;
+		if(i>j) break;
+		int temp=arr[i];
+		  arr[i]==arr[j];
+		  arr[j]=temp;
+}
+
+
+int count = 0; 
+  
+    // Traverse the array. If arr[i] is non-zero, then 
+    // swap the element at index 'count' with the 
+    // element at index 'i' 
+    for (int i = 0; i < n; i++) 
+        if (arr[i] != 1) 
+            swap(arr[count++], arr[i]); 
+} 
+
+[0, 1, 0, 1, 0, 0, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+
+idea: 
+
+
+count : 0 1
+    i : 0 1
+arr[i]:	0 1
+
+Print the elements of an array in the decreasing frequency if 2 numbers have same frequency then print the one which came first.
+	
+*** Script: Australia
+*** Script: Brasil
+*** Script: China
+*** Script: Colombia
+*** Script: Czech Republic
+*** Script: France
+*** Script: Germany
+*** Script: Italy
+*** Script: Japan
+*** Script: Mexico
+*** Script: United Kingdom
+*** Script: USA
+
+Input: arr[] = {2, 3, 2, 4, 5, 12, 2, 3, 3, 3, 12}
+Output: 3 3 3 3 2 2 2 12 12 4 5
+
+List<Integer> outputArray = new ArrayList<>();
+HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+for(int i=0;i<arr.length;i++)
+{
+	if(hm.containsKey(arr[i]))
+	{
+	int count = hm.get(arr[i]);
+	hm.put(arr[i],count++);
+	outputArray.add(arr[i]);
+	}
+	else
+	{
+	   hm.put(arr[i],0);
+	   outputArray.add(arr[i]);
+	}
+}
+
+
+comp c= new comp(hm);
+
+Collections.sort(outputArray,comp);
+
+for(Integer i:outputArray){
+System.out.println(i+" ");
+}
+
+public class comp extends Comparator<Integer>
+{
+	private HashMap<Integer,Integer> freqMap
+	comp(HashMap<Integer,Integer> fMap){
+		this.freqMap=fMap;
+	}
+	
+	public int compare(int k1,int k2){
+		int freqCompare = freqMap.get(k1).compare(freqMap.get(k1));
+		int valcompare  = k1.compare(k2);
+		
+		if(freqCompare==0) return valcompare;
+		else return freqCompare;
+	}
+	
+}
+
+
+cheers!!
+             i     j
+The sequence 2, 4, 1, 3, 5 has three inversions (2, 1), (4, 1), (4, 3).
+
+arr[i]>arr[j]  i<j
+
+{1, 60, -10, 70, -80, 85}
+
+
+0
+
+-80 -10 1 60 70 85 
+     
+
+i=0 0 1    
+j=5 4 3 2 1
+
+sum=5,10,60,50,9 
+
+cheers!!
+
+=================================================================
+Shortest Un-ordered Subarray
+
+Input : n = 5
+        7 9 10 8 11
+Output : 3
+Explanation : 9 10 8 unordered sub array.
+
+Input : n = 5
+       1 2 3 4 5
+Output : 0 
+Explanation :  Array is in increasing order.
+========================================================================
+
+Minimum number of swaps required to sort an array
+Input : {4, 3, 2, 1}
+Output : 2
+Explanation : Swap index 0 with 3 and 1 with 2 to 
+              form the sorted array {1, 2, 3, 4}.
+
+Input : {1, 5, 4, 3, 2}
+Output : 2
+====================================================================================
+
+Union and Intersection of two sorted arrays
+Given two sorted arrays, find their union and intersection.
+
+Example:
+
+Input : arr1[] = {1, 3, 4, 5, 7}
+        arr2[] = {2, 3, 5, 6}
+		
+Output : Union : {1, 2, 3, 4, 5, 6, 7} 
+         Intersection : {3, 5}
+
+Input : arr1[] = {2, 5, 6}
+        arr2[] = {4, 6, 8, 10} 
+
+		Output : Union : {2, 4, 5, 6, 8, 10} 
+         Intersection : {6}
+
+cheers!!
+=================================================================================================
+Sort an array of 0s, 1s and 2s
+Given an array A[] consisting 0s, 1s and 2s, write a function that sorts A[]. The functions should put all 0s first, then all 1s and all 2s in last.
+Examples:
+          0  1  2  3  4  5 
+Input :  {0, 1, 0, 2, 1, 2}
+
+Output : {0, 0, 1, 1, 2, 2}
+
+Input :  {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}
+Output : {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2}
+
+int lo=0,hi=n-1;
+
+while(lo<hi){
+while(arr[lo]==0) lo++; 
+while(arr[hi]==1) hi--;
+
+
+int temp=arr[lo];
+arr[lo]=arr[hi];
+arr[hi]=temp; 
+}
+
+
+0, 1, 0, 1, 0, 0,
+
+lo:0 1   
+hi:5
+
+
+Two Colours
+
+It is easiest to consider just two "colours", {zero,one}, first. The algorithm maintains three sections (possibly empty) in the array a[ ]:
+
+a[1..Lo-1] zeroes
+a[Lo..Hi] unknown
+a[Hi+1..N] ones
+The unknown section is shrunk while maintaining these conditions:
+Lo := 1; Hi := N;
+while Lo <= Hi do
+Invariant: a[1..Lo-1] are all zero and a[Hi+1..N] are all one; a[Lo..Hi] are unknown.
+if a[Lo] = 0 then Lo++
+else swap a[Lo] and a[Hi]; Hi--
+--- 2-way Partitioning ---
+
+
+0, 1, 0, 1, 0, 0, 1, 1, 1, 0
+0, 0, 0, 0, 0, 1, 1, 1, 1, 1
+
+
+lo=0 1  
+hi=9 
+
+Three Colours
+
+The problem was posed with three colours, here `0', `1' and `2'. The array is divided into four sections:
+
+a[1..Lo-1] zeroes (red)
+a[Lo..Mid-] ones (white)
+a[Mid..Hi] unknown
+a[Hi+1..N] twos (blue)
+The unknown region is shrunk while maintaining these conditions
+Lo := 0; Mid := 0; Hi := N;
+while Mid <= Hi do
+Invariant: a[1..Lo-1]=0 and a[Lo..Mid-1]=1 and a[Hi+1..N]=2; a[Mid..Hi] are unknown.
+case a[Mid] in
+0: swap a[Lo] and a[Mid]; Lo++; Mid++
+1: Mid++
+2: swap a[Mid] and a[Hi]; Hi--
+
+{0, 0,  1, 2, 1, 2}
+    l   m    hi  
+
+lo=0;  1  
+mid=0; 1 2  
+hi=6    
+
+
+ 
+mid=0; lo++;mid++;
+
+mid=1;
+mid++;
+
+while(arr[mid]==0) {  int t=arr[lo]; arr[lo]=arr[mid];arr[mid]=t;mid++;lo++;}
+while(arr[hi]==2)  {int t=arr[lo]; arr[lo]=arr[mid];arr[mid]=t;hi--;}
+while(arr[mid]==1) mid++;
+
+
+
+ar1[] = {1, 5, 10, 20, 40, 80}
+ar2[] = {6, 7, 20, 80, 100}
+ar3[] = {3, 4, 15, 20, 30, 70, 80, 120}
+
+Find position of an element in a sorted array of infinite numbers
+Suppose you have a sorted array of infinite numbers, how would you search an element in the array?
+
+Source: Amazon Interview Experience.
+Since array is sorted, the first thing clicks into mind is binary search, but the problem here is that we don’t know size of array.
+If the array is infinite, that means we don’t have proper bounds to apply binary search. So in order to find position of key, first we find bounds and then apply binary search algorithm.
+
+Let low be pointing to 1st element and high pointing to 2nd element of array, Now compare key with high index element,
+->if it is greater than high index element then copy high index in low index and double the high index.
+->if it is smaller, then apply binary search on high and low indices found
+
+1 3 4 5 6
+
+l=1;
+h=2;
+
+static int findPos(int arr[],int key){
+int lo = 0;
+int hi = 1;
+val    = arr[0];
+
+while(val<key){
+	if(arr[h]<key){
+	    l=h;
+		h=2*h;
+	}
+    val = arr[h];	
+}
+
+return binarySearch();
+
+1 3 4 5 6
+
+public static int binarySearch(int[] arr,int lo,int hi,int key){
+	
+	if(lo>hi) return -1;
+	int mid = lo + (hi-lo)/2;
+	
+	if(arr[mid]<key) return binarySearch(arr,mid+1,hi,key);
+	if(arr[mid]>key) return binarySearch(arr,lo,mid,key);
+	if(arr[mid]==key) return mid;
+	
+	return -1;
+}
+
+cheers!!
+
+Find the only repetitive element between 1 to n-1
+We are given an array arr[] of size n. Numbers are from 1 to (n-1) in random order. The array has only one repetitive element. We need to find the repetitive element.
+
+Examples :
+
+Input  : a[] = {1, 3, 2, 3, 4}
+Output : 3
+
+Input  : a[] = {1, 5, 1, 2, 3, 4}
+Output : 1
+static int findRepeating(int arr[], int n)  
+{
+	int sum=0;
+	for(int i=0;i<n;i++){
+		sum+=arr[i];
+	}
+	int fsum=((n-1)*n)/2;
+	
+	return sum-fsum;
+}
+
+Find the element that appears once in an array where every other element appears twice
+Given an array of integers. All numbers occur twice except one number which occurs once. Find the number in O(n) time & constant extra space.
+
+Example :
+
+Input:  ar[] = {7, 3, 5, 4, 5, 3, 4}
+Output: 7 
+
+Maximum Subarray Sum Excluding Certain Elements
+Given an array of A of n integers and an array B of m integers find the Maximum Contiguous Subarray Sum of array A such that any element of array B is not present 
+in that subarray
+
+Examples :
+
+Input : A = {1, 7, -10, 6, 2}, B = {5, 6, 7, 1}
+Output : 2
+Explanation Since the Maximum Sum Subarray of A is not allowed to have any element that is present in array B.
+The Maximum Sum Subarray satisfying this is {2} as the only allowed subarrays are:{-10} and {2}. The Maximum Sum Subarray being {2} which sums to 2
+
+Input : A = {3, 4, 5, -4, 6}, B = {1, 8, 5}
+Output : 7
+
+Explanation
+The Maximum Sum Subarray satisfying this is {3, 4} as the only allowed subarrays are {3}, {4}, {3, 4}, {-4}, {6}, {-4, 6}. The Maximum Sum subarray being {3, 4} which sums to 7
+
+	   
+void deleteNode(int key) 
+{
+	if(head==null) {System.out.print("LL is empty");}
+	if(head!=null && head.getData()==d && tail==head) {head=head.getNext(); tail=tail.getNext(); return d;}
+	if(head!=null && head.getData()==d) {head=head.getNext(); return d;}
+	
+    Node n=head.getNext();
+	Node prev=null;
+	
+    while(n!=null && n.getData()!=d){
+		prev=n;
+		n=n.getNext();
+	}
+    
+  	if(n==null){System.out.print("node doesn't exist");}
+	
+	if(n==tail){
+	prev.getNext()=n.getNext();
+	tail=prev;
+	}else{
+		prev.getNext()=n.next();
+	}
+	
+}
+
+
+class LinkedList 
+{ 
+	Node head; 
+	Node tail;
+	
+	class Node 
+	{ 
+		int data; 
+		Node next; 
+		Node(int d) 
+		{ 
+			data = d; 
+			next = null; 
+		}
+		public int getData(){return data;}
+		public Node getNext(){return next;}
+		public void setData(int d){data=d;}
+		public void setNext(Node n){next=n;}
+	} 
+
+	/* Given a key, deletes the first occurrence of key in linked list */
+	void deleteNode(int d) 
+{
+	if(head==null) {System.out.print("LL is empty");}
+	if(head!=null && head.getData()==d && tail==head) {head=head.getNext(); tail=tail.getNext(); return;}
+	if(head!=null && head.getData()==d) {head=head.getNext(); return;}
+	
+    Node n=head;
+	Node prev=null;
+	
+    while(n!=null && n.getData()!=d){
+		prev=n;
+		n=n.getNext();
+	}
+    
+  	if(n==null){System.out.print("node doesn't exist");}
+	
+	if(n==tail){
+	prev.setNext(n.getNext());
+	tail=prev;
+	}else{
+		prev.setNext(n.getNext());
+	}
+	
+} 
+
+	/* This function prints contents of linked list starting from 
+		the given node */
+	public void printList() 
+	{ 
+		Node tnode = head; 
+		while (tnode != null) 
+		{ 
+			System.out.print(tnode.data+" "); 
+			tnode = tnode.next; 
+		} 
+	} 
+
+	/* Drier program to test above functions. Ideally this function 
+	should be in a separate user class. It is kept here to keep 
+	code compact */
+	public static void main(String[] args) 
+	{ 
+		LinkedList llist = new LinkedList(); 
+
+		llist.head=llist.new Node(1);
+		Node second = llist.new Node(2);
+		llist.tail=llist.new Node(3);
+		
+		llist.head.setNext(second);
+		second.setNext(llist.tail);
+		llist.tail.setNext(null);
+
+		System.out.println("\nCreated Linked list is:"); 
+		llist.printList(); 
+
+		llist.deleteNode(1); // Delete node at position 4 
+
+		System.out.println("\nLinked List after Deletion at position 4:"); 
+		llist.printList(); 
+	} 
+} 
+	   
+Delete a Linked List node at a given position
+Given a singly linked list and a position, delete a linked list node at the given position.
+Example:
+
+Input: position = 1, Linked List = 8->2->3->1->7
+Output: Linked List =  8->3->1->7
+
+Input: position = 0, Linked List = 8->2->3->1->7
+Output: Linked List = 2->3->1->7
+
+class LinkedList 
+{ 
+    Node head;  // head of list 
+  
+    /* Linked list Node*/
+    class Node 
+    { 
+        int data; 
+        Node next; 
+        Node(int d) 
+        { 
+            data = d; 
+            next = null; 
+        } 
+    } 
+
+	void deleteNode(int pos) 
+    {
+		
+		
+		
+    }
+}
+
+
+void deleteNode(int key) 
+{ 
+	Node temp = head,prev=null;
+    
+	if(temp!=null && temp.data==key){ head=temp.next;return;}
+
+    while(temp!=null && temp.data!=key){
+		prev=temp;
+		temp=temp.next;
+	}
+	
+	if(temp==null) {return;}
+	
+	prev.next=temp.next;
+}
+
+void deleteNode(int pos){
+	
+		Node temp = head,prev=null;
+		
+		if(temp!=null && pos==0) {head=temp.next;return;}
+		
+		for(int i=0;i<=pos;i++){
+			if(temp!=null && i!=pos){
+				prev=temp;
+				temp=temp.next;
+			}
+		}
+		if(temp==null) {return;}
+		prev.next=temp.next;
+} 
+                                   0  1  2  3  4 
+Input: position = 1, Linked List = 8->2->3->1->7
+Output: Linked List =  8->3->1->7
+
+prev= 8 2 3 
+temp= 1 3 1
+i=    0 1 2 3
+pos=  4 4 4 4
+pos-1 3 3 3 3
+
+
+
+Find Length of a Linked List (Iterative and Recursive)
+Write a function to count number of nodes in a given singly linked list.
+
+linkedlist_find_length
+
+For example, the function should return 5 for linked list 1->3->1->2->1.
+
+int size(){
+int temp = head;
+int len=0;
+
+while(temp.next!=null){
+	len++;
+	temp=temp.next;
+}
+return len;
+}
+
+
+int getCount(Node n){
+	if(n==null) return 0;
+	
+	getcount(n.next);
+}
+
+
+
+public boolean search(Node head, int x) 
+{ 	
+    if(head==null) return false;
+	
+	Node  temp=head;
+	while(temp!=null && temp.data!=x)
+	{
+		temp=temp.next;	
+	}
+	if(temp==null)
+	return false;
+	else return true;
+}
+
+public boolean search(Node head, int x) 
+{ 	
+    if(head==null) return false;
+	
+	if(head.data==x) return true;
+	return search(head.next, int x);
+	
+}
+
+Write a function to get Nth node in a Linked List
+Write a GetNth() function that takes a linked list and an integer index and returns the data value stored in the node at that index position.
+Example:
+
+Input:  1->10->30->14,  index = 2
+Output: 30  
+The node at index 2 is 30
+
+public int getNth(int index){
+	if(head==null) {System.out.println("LL is empty"); return -1;}
+	
+	Node temp=head;
+	int i=0;
+	
+	while(temp!=null && i!=index){
+	    temp=temp.next;
+        i++;		
+	}
+	
+	if(temp==null) {System.out.print("index is out of range"); return -1;}
+	return temp.data;
+	
+}
+
+public int getNth(Node head,int index){
+	int temp = head;
+	if(temp==null) return -1 ;
+	int i=0;
+	
+	if(i==index && temp!=null) return temp.data;
+	return getNth(temp.next,index-1);
+}
+
+static int GetNth( Node head, int n)  
+{  
+    int count = 1;  
+      
+    //if count equal too n return node.data  
+    if(count == n)  
+    return head.data;  
+      
+    //recursively decrease n and increase  
+    // head to next pointer  
+    return GetNth(head.next, n - 1);  
+}  
+
+Program for n’th node from the end of a Linked List
+Given a Linked List and a number n, write a function that returns the value at the n’th node from end of the Linked List.
+For example, if input is below list and n = 3, then output is “B”
+
+ 0	1   2   3   4  5 
+ 1->10->30->14->9->7
+ 		     p     r
+5-3+1.
+
+int getNthLast(int n){
+
+if(i==0) {}
+if(head==null) {System.out.print("LL is empty");}
+Node p =head, r=head;
+
+for(int i=0;i<n;i++){   
+    if(r==null) {System.out.println("n is out of range.");return;} 
+	r=r.next;
+	
+}
+
+while(r!=null){
+	p=p.next;
+	r=r.next;
+}
+
+return p.data;
+
+} 
+
+
+  3rd from last means 6-3+1=4 from start.
+
+  A		B	C	D
+ 
+ 
+ 
+public int size(){
+int temp = head;
+int len=0;
+
+while(temp.next!=null){
+	len++;
+	temp=temp.next;
+}
+return len;
+}
+
+int index=size-n+1;
+
+ 
+ public int getNth(int index){
+	int temp = head;
+	if(temp==null) return -1 ;
+	int i=0;
+	
+	if(i==index && temp!=null) return temp.data;
+	return getNth(temp.next,index-1);
+}
+1  2   3    4  5  6  
+1->10->30->14->9->7
+			s		f=null
+			
+void printMiddle(){
+
+if(head==null) System.out.print("LL is empty.");
+
+Node slow=head,fast=head;
+
+while(fast!=null && fast.next!=null){
+	fast=fast.next.next;
+	slow=slow.next;
+}
+
+System.out.print(slow.data);
+
+}
+
+int count(int search_for) {
+
+if(head==null) {System.out.println("LL is empty");return;}
+int count=0;
+Node=temp;
+
+while(temp!=null){
+	
+	if(temp.data==search_for) count++;
+	temp=temp.next;
+	}
+	
+return count;
+} 
+ 
+static int frequency = 0;
+ 
+int count(int search_for) {
+
+	if(head==null) return frequency;
+	if(head.data==search_for) frequency++;
+	else return count(search_for);
+}  
+
+public boolean containsCycle(){ 
+
+HashSet<Node> ht = new HashSet<Node>();
+Node temp = head;
+
+while(temp!=null){
+if(ht.contains(temp)) return true;
+else ht.add(temp);
+temp=temp.next;
+}
+
+return false;
+}
+
+int detectLoop() 
+{
+Node slow=head,fast=head;
+
+while(slow!=null && fast!=null && fast.next!=null){
+	slow = slow.next;
+	fast = fast.next.next;
+	if(slow==fast){
+		System.out.print("loop detected");
+        return 1;		
+	}
+}
+return 0;	
+}
+
+We know that Floyd’s Cycle detection algorithm terminates when fast and slow pointers meet at a common point.
+We also know that this common point is one of the loop nodes (2 or 3 or 4 or 5 in the above diagram).
+We store the address of this common point in a pointer variable say ptr.
+ 
+Then we initialize a counter with 1 and start from the common point and keeps on visiting next node 
+and increasing the counter till we again reach the common point(ptr).
+At that point, the value of the counter will be equal to the length of the loop.
+ 
+int detectLoopLength() 
+{
+Node slow=head,fast=head;
+
+while(slow!=null && fast!=null && fast.next!=null){
+	slow = slow.next;
+	fast = fast.next.next;
+	if(slow==fast){
+		System.out.print("loop detected");
+        return countLen(slow);		
+	}
+}
+return 0;	
+} 
+
+int countLen(Node n){
+	int len=1;
+	
+    Node temp=n;	
+	
+	while(temp.next!=n){
+	temp = temp.next;
+		len++;
+	}
+	return len;
+} 
+ 
+ [4,5,6,7,0,1,2] 1
+ 
+ 1,3
+ 
+ 1
+ 
+ 0,1
+ 
+ class Solution {
+    public int search(int[] nums, int target) {
+        if (nums.length==0) return -1;
+        int pivot=findPivot(nums,0,nums.length-1);
+        if(pivot==-1) return Arrays.binarySearch(nums,target);
+        
+        if(nums[pivot]==target) return pivot;
+        if(nums[0]<=target) return binarySearch(nums,0,pivot-1,target);
+        else return binarySearch(nums,pivot+1,nums.length-1,target);    
+        
+    }
+    
+    int findPivot(int[] arr,int lo,int hi){
+        if(lo==hi) {
+			return lo;
+		}
+        if(hi<lo) return -1;
+        
+        int mid=lo+(hi-lo)/2;
+        
+        if(arr[mid]>arr[mid+1]) return mid;
+        if (arr[mid]<arr[hi]) return findPivot(arr,lo,mid-1);
+        else return findPivot(arr,mid+1,hi);
+        
+    }
+    
+    int binarySearch(int[] arr,int lo,int hi,int target){
+        if(lo>hi) return -1;
+		
+        int mid=lo+(hi-lo)/2;
+        
+        if(arr[mid]==target) return mid;
+        else if(arr[mid]<target) return binarySearch(arr,mid+1,hi,target);
+        else return binarySearch(arr,lo,mid-1,target);
+    }
+}
+ 
+public int search(int[] nums, int target) {
+        int pivot=findPivot(nums,0,nums.length-1);
+        if(pivot==-1) return Arrays.binarySearch(nums,target);
+        
+        if(nums[pivot]==target) return pivot;
+        if(nums[0]<=target) return binarySearch(nums,0,pivot-1,target);
+        else return binarySearch(nums,pivot+1,nums.length-1,target);    
+        
+    }
+    
+    int findPivot(int[] arr,int lo,int hi){
+        if(lo==hi) {
+			return lo;
+		}
+        if(hi<lo) return -1;
+        
+        int mid=lo+(hi-lo)/2;
+        
+        if(arr[mid]>arr[mid+1]) return mid;
+        if (arr[mid]<arr[hi]) return findPivot(arr,lo,mid-1);
+        else return findPivot(arr,mid+1,hi);
+        
+    }
+    
+    int binarySearch(int[] arr,int lo,int hi,int target){
+        if(lo>hi) return -1;
+		
+        int mid=lo+(hi-lo)/2;
+        
+        if(arr[mid]==target) return mid;
+        else if(arr[mid]<target) return binarySearch(arr,mid+1,hi,target);
+        else return binarySearch(arr,lo,mid-1,target);
+    }
+	
+class Solution {
+    public int search(int[] nums, int target) {
+        
+        if(nums == null || nums.length == 0) return -1;
+        
+        int start = 0;
+        int end = nums.length - 1;
+        
+        while(start <= end) {
+            int mid = (start + end) / 2;
+
+            if(nums[mid] == target) return mid;
+            
+            if(nums[start] <= nums[mid]) {
+                
+                if(target >= nums[start] && target < nums[mid]) {
+                    end = mid -1;
+                } else {
+                    start = mid + 1;
+                }
+                
+            } else {
+                
+                if(target <= nums[end] && target > nums[mid]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+        }
+        
+        
+        return -1;
+    }
+}
+
+
+
+static void printList(Node head) 
+{
+    if(head==null) return;
+	
+	Node temp=head;
+	
+	do{
+		System.out.print(temp.data);
+		temp=temp.next;
+	}while(temp!=head)	
+}
+
+1-2
+
+void splitList() {
+	if(head==null) return;
+	
+	Node slow=head;
+	Node fast=head;
+	
+	while(fast.next.next!=head){
+		slow=slow.next;
+		fast=fast.next.next;
+	}
+	
+	if(fast.next!=head){
+		fast=fast.next;
+	}
+	
+	head1=head;
+	
+	head2=slow.next;
+	slow.next=head1;
+	
+	fast.next=head2;
+	
+}
+Awesome!!
+
+       
+2->4->5->6->2
+
+	void sortedInsert(Node new_node) 
+{
+	Node current=head;
+	
+	if(current==null){
+		new_node.next=new_node;
+		head=new_node;
+	}
+	else if
+	if(current.data>=new_node.data){
+		while(current.next!=head){
+			current=current.next;
+		}
+		current.next=new_node;
+		new_node.next=head;
+		head=new_node;
+	}
+	else{
+	while (current.next != head && 
+current.next.data < new_node.data) 
+current = current.next; 
+
+new_node.next = current.next; 
+current.next = new_node; 
+	}
+}
+
+static boolean isCircular(Node head) 
+{
+	if(head==null) return true;
+	Node temp=head;
+	
+	do{
+		temp=temp.next;
+	}while(temp.next!=head && temp.next!=null)
+	
+	if(temp.next==head) return true;
+	if(temp.next==null) return false;
+	
+	return false;
+} 
+ 
+static void addToEmpty(Node newNode){
+	newNode.next=newNode;
+	head=newNode;
+} 
+
+static void addToStart(Node newNode){
+	Node n=last.next;
+	last.next=newNode;
+	newNode.next=n;
+}
+
+static void addToLast(Node newNode){
+	Node n=last.next;
+	last.next=newNode;
+	newNode.next=n;
+	last=newNode;
+}
+
+static void addToBetween(Node newNode, int data){
+	
+}		
+1->2-3>-4->5->6->1
+
+h->6->2-3>-4->5->1->6
+
+
+static Node exchangeNodes(Node head) 
+{ 
+		Node temp=head;
+		Node prev=null;
+		Node current=head;
+		
+		if(head==null) return null;
+		if(head.next==head) return head;
+		else {
+			while(current.next!=null){
+				prev=current;
+				current=current.next;
+			}
+			prev.next=current.next;
+			prev.next.next=current;
+			current.next=head.next;
+			head=current;
+		return head;	
+		}
+}
+
+p.next.next = head.next; 
+
+    head.next = p.next; 
+    p.next = head; 
+    head = head.next; 
+
+Insertion
+A node can be added in four ways
+1) At the front of the DLL
+2) After a given node.
+3) At the end of the DLL
+4) Before a given node.
+
+
+
+public void push(int new_data) 
+{       Node n=new Node(new_data);
+		
+		if(head==null) head=n;
+		else
+		{
+			n.prev=null;
+			head.prev=n;
+            n.next=head;
+			head=n;	
+		}
+		
+}
+
+public void InsertAfter(Node prev_Node, int new_data) 
+{
+    if(prev_Node==null) return;
+	
+	Node n=new Node(new_data);
+	Node temp=prev_Node.next;
+	prev_Node.next=n;
+	n.prev=prev_Node;
+	n.next=temp;
+	
+	if(temp!=null)
+	temp.prev=n;
+}
+
+void append(int new_data) 
+{
+	Node n=new Node(new_data);
+	if(head==null) {head = n; return;}
+	   
+		node temp=head;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		
+		temp.next=new_data;
+		new_data.prev=temp;
+		new_data.next=null;
+	
+	
+}
+
+void insertBefore(Node head, Node next_node, int new_data)
+{
+	if(next_node==null) return;
+	Node n = new Node(new_data);
+	Node temp=next_node.prev;
+	
+	n.next=next_node;
+	n.prev=temp;
+	next_node.prev=n;
+	
+	if(temp!=null)
+	temp.next=n;
+}  
+
+void cloneDLL() { 
+		Node temp=head;
+        Node prv=null;
+
+while(temp!=null){
+    
+if(prv==null)
+{   
+	prv=new Node(temp.data);
+	prv.prev=null;
+	prv.next=null;
+	head1=prv;
+}
+else
+{
+    prv.next=new Node(temp.data);
+	prv.next.prev=prv;
+	prv=prv.next;
+	
+}
+temp=temp.next;
+}
+
+prv.next=null; 
+} 
+
+void deleteNode(Node head, Node del) 
+{ 
+  if(head==null || del==null) return;
+  if(del==head) {head=del.next; return;}
+  if(del.next!=null){del.next.prev=del.prev;}
+  if(del.prev!=null){del.prev.next=del.next;  return;}
+       
+}			 
+
+You are given a Double Link List with one pointer of each node pointing to the next node just like in a single link list. 
+The second pointer however CAN point to any node in the list and not just the previous node.
+Now write a program in O(n) time to duplicate this list. That is, write a program which will create a copy of this list.
+Let us call the second pointer as arbit pointer as it can point to any arbitrary node in the linked list.
+
+
+
+
+
+
+
+
+
+
+
