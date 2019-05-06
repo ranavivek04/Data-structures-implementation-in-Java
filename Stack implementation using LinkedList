@@ -1,0 +1,71 @@
+
+public class StackAsLinkedList { 
+
+Node head; 
+
+static class Node { 
+int data; 
+Node next; 
+
+Node(int data) { 
+this.data = data; 
+} 
+} 
+
+int size()
+{int s=0;
+Node temp=head;
+while(temp!=null){
+s++;
+temp=temp.next;
+}
+return s;
+}
+
+boolean isEmpty() 
+{ if (size()==0) return true; else return false; }
+
+boolean push(int x)
+{
+Node temp=new Node(x);
+temp.next=head;
+head=temp;
+System.out.print(x+" pushed to stack\n");
+return true;
+} 
+
+int pop() 
+{
+    if(head==null) return -1;
+Node temp=head;
+head=head.next;
+System.out.print(temp.data+" popped out of stack\n");
+return temp.data;
+} 
+
+public int peek() { 
+if (head == null) { 
+System.out.println("Stack is empty"); 
+return Integer.MIN_VALUE; 
+} else { 
+return head.data; 
+} 
+
+} 
+
+public static void main(String[] args) { 
+
+StackAsLinkedList sll = new StackAsLinkedList(); 
+
+sll.push(10); 
+sll.push(20); 
+sll.push(30); 
+
+System.out.println(sll.pop() + " popped from stack"); 
+
+System.out.println("Top element is " + sll.peek()); 
+
+
+} 
+
+}
