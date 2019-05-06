@@ -1,0 +1,48 @@
+class TwoStacks 
+{ 
+	static final int MAX=1000;
+	int[] a=new int[MAX];
+	int t1=-2,t2=-1;
+	
+	void push1(int x){
+		t1=t1+2;
+		if(t1>MAX) System.out.println("Overflow");    
+		a[t1]=x;
+	}
+	
+	void push2(int x){
+		t2=t2+2;
+		if(t2>MAX) System.out.println("Overflow");
+		a[t2]=x;
+	}
+	
+	int pop1(){
+		if(t1<=-2) return -1;
+		int r=a[t1];
+		t1=t1-2;
+		return r;
+	}
+	
+	int pop2(){		
+		if(t2<=-1) return -1;
+		int r=a[t2];
+		t2=t2-2;
+		return r;
+	}
+
+	// Driver program to test twoStack class 
+	public static void main(String args[]) 
+	{ 
+		TwoStacks ts = new TwoStacks(); 
+		ts.push1(5); 
+		ts.push2(10); 
+		ts.push2(15); 
+		ts.push1(11); 
+		ts.push2(7); 
+		System.out.println("Popped element from" + 
+						" stack1 is " + ts.pop1()); 
+		ts.push2(40); 
+		System.out.println("Popped element from" + 
+						" stack2 is " + ts.pop2()); 
+	} 
+} 
