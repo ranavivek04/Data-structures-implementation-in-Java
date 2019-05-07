@@ -1,0 +1,79 @@
+/* Java Program to implement a stack that supports findMiddle() and deleteMiddle 
+in O(1) time */
+
+public class midStack 
+{ 
+	Node head,middle;
+	int t=-1,s=0;
+	
+	private class Node{
+		int data;
+		Node next;
+		Node prev;
+		Node(int y){
+		    data=y;
+		}
+	}
+	
+	int pop(){
+		if(s==0) return -1;
+		int d=head.data;
+		head=head.next;
+		if(head!=null) head.prev=null;
+		s--;
+		if(s==0) middle=null;
+		if(s==1) middle=head;
+		if(s%2==0) middle=middle.next;
+		return d;
+	}
+	
+	void push(int x){
+		Node temp=new Node(x);
+		temp.next=head;
+		if(head!=null) head.prev=temp;
+		head=temp;
+		s++;
+		if(s==1) middle=temp;
+		
+		if(s%2!=0 && s>2) middle=middle.prev;
+	}
+	
+	int findMiddle(){
+		if(middle!=null)
+		return middle.data;
+		return -1;
+	}
+	
+	void deleteMiddle(){
+		if(s==0) return;
+		if(s==1) {head=null; middle=null; s--; return;}
+		if(s==2) {middle=middle.prev; head.next=null; return;}
+		
+		if(s%2!=0 && s>2){
+		Node p=middle.prev;
+		middle=middle.next;
+		p.next=middle;
+		}else{
+			Node n=middle.next;
+			middle=middle.prev;
+			n.prev=middle;
+		}
+	}
+	// Driver program to test functions of myStack 
+	public static void main(String args[]) 
+	{ 
+		midStack ob = new midStack();  
+		ob.push(11); 
+		ob.push(22); 
+		ob.push(33); 
+		ob.push(44); 
+		ob.push(55); 
+		ob.push(66); 
+		ob.push(77); 
+		
+		System.out.println("Item popped is " + ob.pop()); 
+		System.out.println("Item popped is " + ob.pop()); 
+		System.out.println("Middle Element is " + ob.findMiddle()); 
+	} 
+} 
+
