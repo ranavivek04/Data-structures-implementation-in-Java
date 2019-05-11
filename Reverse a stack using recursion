@@ -1,0 +1,22 @@
+void reverse(){
+
+	if(!stack.empty())
+	{
+	int a=stack.peek();
+	stack.pop();
+	reverse();
+	insertAtBottom(a);
+	}
+
+void insertAtBottom(int a){
+	if(stack.empty()){
+		stack.push(a);
+	}
+	else{
+		int x=stack.peek();
+		stack.pop();
+		insertAtBottom(a);
+		if(
+		stack.push(x);
+	}
+}
