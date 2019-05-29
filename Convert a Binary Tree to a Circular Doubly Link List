@@ -1,0 +1,27 @@
+Node bTreeToClist(Node root)
+{
+    if(root == null) return root;
+	
+	Node left = bTreeToClist(root.left);
+	Node right = bTreeToClist(root.right);
+	
+	root.left=root.right=root;
+	
+	return concatenate(left,concatenate(root,right));
+    }
+    
+    public Node concatenate(Node leftList,Node rightList) 
+{
+	if(leftList == null) return rightList;
+	if(rightList == null) return leftList;
+	
+	Node llEnd = leftList.left;
+	Node rlEnd = rightList.left;
+	
+	llEnd.right = rightList;
+	rightList.left = llEnd;
+	rlEnd.right = leftList;
+	leftList.left=rlEnd;
+	
+	return leftList;
+} 
