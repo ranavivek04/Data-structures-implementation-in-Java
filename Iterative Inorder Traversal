@@ -1,0 +1,21 @@
+void iterativeInorder(Node root){
+	
+	if(root == null) return;
+	Stack<Node> s = new Stack<Node>();
+	
+	while(true)
+	{
+		if(root!=null)
+		{
+			s.push(root);
+			root = root.left;
+		}
+		else
+		{
+			if(s.isEmpty()){break;}
+			root = s.pop();
+			System.out.print(root.data);
+			root = root.right;
+		}	
+	}
+}
