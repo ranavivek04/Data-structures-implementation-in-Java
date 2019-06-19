@@ -1,0 +1,125 @@
+import java.util.*;
+
+class Graph{
+	int V,E;
+	
+	static class Node //implements Comparable<Node>
+	{
+		int dest;
+		int weight;
+		
+		Node(){};
+	
+		Node(int d, int w)
+		{
+			dest =d;
+			weight =w;
+		}
+		
+	/*	public int compareTo(Node n)
+		{
+			return this.weight - n.weight;
+		}*/
+	}
+
+	static class GNode implements Comparable<GNode>{
+		int vertex;
+		int weight;
+		
+		public int compareTo(GNode n)
+		{
+			return this.weight - n.weight;
+		}
+	}	
+		LinkedList<Node>[] adjList;
+		
+		Graph(int v,int e){
+			V=v;
+			E=e;
+			adjList = new LinkedList[V];
+			for(int i=0;i<V;i++){
+				adjList[i] = new LinkedList<Node>();
+			}
+		}
+		
+	static void primsMST(Graph graph){
+		int[] parent = new int[graph.V];
+		boolean[] processed = new boolean[graph.V];
+		
+		GNode[] result = new GNode[graph.V];
+		for(int i =0; i<graph.V; i++)
+		{
+			result[i] = new GNode();
+		}
+		
+		for(int i =0; i<graph.V; i++)
+		{
+			result[i].weight = Integer.MAX_VALUE;
+			result[i].vertex = i;
+			processed[i] = false;
+			parent[i] = -1;
+		}
+		
+		result[0].weight = 0;
+		processed[0]=true;
+		
+		TreeSet<GNode> queue = new TreeSet<GNode>();
+		
+		for(int i=0;i<graph.V;i++){
+			queue.add(result[i]);
+		}
+		
+		while(!queue.isEmpty()){
+			GNode node = queue.pollFirst();
+			processed[node.vertex] = true;
+			
+			for(Node n:graph.adjList[node.vertex]){
+			    
+				if(processed[n.dest] == false){
+				    
+					if(n.weight < result[n.dest].weight){
+						queue.remove(result[n.dest]);
+						result[n.dest].weight = node.weight;
+						queue.add(result[n.dest]);
+						parent[n.dest] = node.vertex;
+					}
+				}
+			}
+		}
+		
+		for(int i=1;i<graph.V;i++){
+			System.out.print(parent[i]+"-"+i+"\n");
+		}
+	}
+	
+	public static void main(String[] args){
+		Graph g = new Graph(9,14);
+		g.adjList[0].add(new Node(1,4));
+		g.adjList[0].add(new Node(7,8));
+		g.adjList[1].add(new Node(2,8));
+		g.adjList[1].add(new Node(7,11));
+		
+		g.adjList[2].add(new Node(3,7));
+		g.adjList[2].add(new Node(8,2));
+		g.adjList[2].add(new Node(5,4));
+		g.adjList[3].add(new Node(4,9));
+		
+		g.adjList[3].add(new Node(5,14));
+		g.adjList[4].add(new Node(5,10));
+		g.adjList[5].add(new Node(6,2));
+		g.adjList[6].add(new Node(7,1));
+		
+		g.adjList[6].add(new Node(8,6));
+		g.adjList[7].add(new Node(8,7));
+		
+        
+        // Method invoked 
+       primsMST(g);
+		
+	/*	for(int i=0;i<g.adjList.length;i++){
+			for(Node n:g.adjList[i]){
+				System.out.print(i+" "+n.dest+" "+n.weight+"\n");
+			}
+		}*/
+	}
+}
