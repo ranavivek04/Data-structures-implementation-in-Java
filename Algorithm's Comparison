@@ -1,0 +1,3 @@
+MST
+Prim’s    - The graph must be : connected , weighted , undirected.Use Prim’s algorithm when you have a graph with lots of edges.O(E + V log V)
+Kruskal’s - The graph must be : connected, weighted.O(E log V) 
