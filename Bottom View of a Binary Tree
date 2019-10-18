@@ -1,0 +1,37 @@
+class Tree
+{
+    // Should print bottom view of tree with given root
+    class TempNode{
+	int data;
+	int depth;
+}
+ 
+ public void bottomView(Node root)
+ {
+	if(root == null) return;
+	Map<Integer,TempNode> map = new TreeMap<>();
+	int hdist=0;
+	int depth=-1;
+	bottomViewUtil(root,map,hdist,depth);
+	for(Map.Entry<Integer,TempNode> entry : map.entrySet()){
+		System.out.print(entry.getValue().data+" ");
+	}
+ }
+ 
+ private void bottomViewUtil(Node root,Map<Integer,TempNode> map,int hdist,int depth){
+	if(root == null) return;
+	if(map.get(hdist) != null){
+		TempNode tn = map.get(hdist);
+		tn.data = root.data;
+		tn.depth = depth;
+		map.put(hdist,tn);
+	}else{
+		TempNode tn = new TempNode();
+		tn.data  = root.data;
+		tn.depth = depth;
+		map.put(hdist,tn);
+	}
+	bottomViewUtil(root.left,map,hdist-1,depth+1);
+	bottomViewUtil(root.right,map,hdist+1,depth+1);	
+ }
+}
